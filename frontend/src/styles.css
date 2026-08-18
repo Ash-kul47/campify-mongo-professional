@@ -1,0 +1,454 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  align-items: center;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #16202f;
+  color: #f8fafc;
+  flex: 0 0 260px;
+  padding: 24px 18px;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 34px;
+}
+
+.brand strong,
+.brand span {
+  display: block;
+}
+
+.brand span {
+  color: #aebccc;
+  font-size: 0.88rem;
+}
+
+nav {
+  display: grid;
+  gap: 8px;
+}
+
+nav button {
+  background: transparent;
+  color: #d8e1ee;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+nav button:hover,
+nav button.active {
+  background: #27364c;
+  color: #ffffff;
+}
+
+.main {
+  flex: 1;
+  padding: 28px;
+}
+
+.page-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.page-header p,
+.auth-copy p,
+.meta {
+  color: #5b6678;
+}
+
+.auth-panel {
+  align-items: stretch;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(320px, 1fr);
+  margin: 8vh auto 0;
+  max-width: 980px;
+}
+
+.auth-copy {
+  background: #173d4f;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 38px;
+}
+
+.auth-copy p {
+  color: #d7e8ec;
+  max-width: 460px;
+}
+
+.auth-form,
+.issue-form,
+.panel,
+.metric,
+.issue-card {
+  background: #ffffff;
+  border: 1px solid #dfe5ee;
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(24, 36, 56, 0.06);
+}
+
+.auth-form,
+.issue-form {
+  display: grid;
+  gap: 16px;
+  padding: 28px;
+}
+
+.segmented {
+  background: #edf2f7;
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px;
+}
+
+.segmented button {
+  background: transparent;
+}
+
+.segmented .selected {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(24, 36, 56, 0.08);
+}
+
+label {
+  color: #303a4c;
+  display: grid;
+  font-weight: 650;
+  gap: 7px;
+}
+
+input,
+select,
+textarea {
+  background: #fbfcfe;
+  border: 1px solid #cdd6e4;
+  border-radius: 8px;
+  color: #172033;
+  min-height: 42px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary {
+  background: #1d6f74;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.ghost {
+  background: #eef3f6;
+  color: #27364c;
+}
+
+.error {
+  align-items: center;
+  background: #fff1f0;
+  border: 1px solid #ffd0ca;
+  border-radius: 8px;
+  color: #9e2b20;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 12px;
+}
+
+.dashboard-grid,
+.archives {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.panel {
+  margin-bottom: 18px;
+  padding: 18px;
+}
+
+.panel-head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.panel h2 {
+  align-items: center;
+  display: flex;
+  font-size: 1.1rem;
+  gap: 8px;
+  margin: 0;
+}
+
+.metrics {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  margin-bottom: 18px;
+}
+
+.metric {
+  padding: 16px;
+}
+
+.metric span {
+  color: #667386;
+  display: block;
+  font-size: 0.88rem;
+}
+
+.metric strong {
+  color: #172033;
+  display: block;
+  font-size: 1.65rem;
+}
+
+.metric.danger strong {
+  color: #b42318;
+}
+
+.cards {
+  display: grid;
+  gap: 12px;
+}
+
+.compact .issue-card {
+  box-shadow: none;
+}
+
+.issue-card {
+  padding: 16px;
+}
+
+.card-top {
+  align-items: flex-start;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+}
+
+.avatar {
+  align-items: center;
+  background: #1d6f74;
+  border-radius: 999px;
+  color: #ffffff;
+  display: flex;
+  font-weight: 800;
+  height: 38px;
+  justify-content: center;
+  width: 38px;
+}
+
+.issue-main h3 {
+  font-size: 1.02rem;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.badges,
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.status,
+.pill {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 700;
+  gap: 5px;
+  min-height: 28px;
+  padding: 4px 10px;
+}
+
+.status.success {
+  background: #e8f6ee;
+  color: #11663a;
+}
+
+.status.warning {
+  background: #fff6db;
+  color: #815500;
+}
+
+.status.neutral,
+.pill {
+  background: #eef3f6;
+  color: #465368;
+}
+
+.details {
+  border-top: 1px solid #e7edf4;
+  margin-top: 14px;
+  padding-top: 14px;
+}
+
+dl {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+dt {
+  color: #667386;
+  font-size: 0.82rem;
+}
+
+dd {
+  margin: 0;
+}
+
+.proofs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.proofs img,
+.proofs video {
+  border: 1px solid #dfe5ee;
+  border-radius: 8px;
+  max-height: 220px;
+  max-width: min(300px, 100%);
+}
+
+.proofs audio {
+  width: min(330px, 100%);
+}
+
+.contact {
+  background: #f4f8fa;
+  border: 1px solid #dfe8ee;
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  margin: 12px 0;
+  padding: 12px;
+}
+
+.form-section {
+  display: grid;
+  gap: 14px;
+}
+
+.form-section h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.empty {
+  background: #f2f5f9;
+  border: 1px dashed #cdd6e4;
+  border-radius: 8px;
+  color: #667386;
+  padding: 18px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .app-shell,
+  .auth-panel {
+    display: block;
+  }
+
+  .sidebar {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .main {
+    padding: 18px;
+  }
+
+  .auth-copy {
+    margin-bottom: 18px;
+  }
+
+  .dashboard-grid,
+  .archives,
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .card-top,
+  dl {
+    grid-template-columns: 1fr;
+  }
+}
