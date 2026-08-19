@@ -65,12 +65,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/student", studentRoutes);
 app.use("/api/admin", adminRoutes);
 
-if (isProduction) {
-  app.use(express.static(frontendDist));
-  app.get(/.*/, (_req, res) => res.sendFile(path.join(frontendDist, "index.html")));
-} else {
-  app.use("/api", notFound);
-}
+
 
 app.use(errorHandler);
 
