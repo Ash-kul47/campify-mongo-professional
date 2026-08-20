@@ -22,8 +22,21 @@ app.use(helmet({
   contentSecurityPolicy: false
 }));
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://campify-campus-governance-platform-wttz.onrender.com",
+  "https://campify.ashukulkarni.co.in"
+];
+
 app.use(cors({
-  origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`CORS blocked origin: ${origin}`));
+  },
   credentials: true
 }));
 
